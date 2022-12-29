@@ -38,14 +38,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('Sign in',
+                  Text('Iniciar Sesión',
                       style: Theme.of(context).textTheme.headlineMedium),
                   TextField(
-                    decoration: const InputDecoration(labelText: 'Username'),
+                    decoration: const InputDecoration(labelText: 'Usuario'),
                     controller: _usernameController,
                   ),
                   TextField(
-                    decoration: const InputDecoration(labelText: 'Password'),
+                    decoration: const InputDecoration(labelText: 'Contraseña'),
                     obscureText: true,
                     controller: _passwordController,
                   ),
@@ -57,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             _usernameController.value.text,
                             _passwordController.value.text));
                       },
-                      child: const Text('Sign in'),
+                      child: const Text('Iniciar Sesión'),
                     ),
                   ),
                 ],

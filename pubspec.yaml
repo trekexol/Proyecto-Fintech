@@ -17,6 +17,7 @@ dependencies:
   url_launcher: ^6.1.1
   url_strategy: ^0.2.0
   sqflite: ^2.2.2
+  intl: ^0.18.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding.git
@@ -27,6 +28,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   test: ^1.16.0
+  json_serializable: ^6.2.0
+  build_runner: ^2.1.8
 
 flutter:
   uses-material-design: true

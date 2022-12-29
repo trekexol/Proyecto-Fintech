@@ -10,7 +10,7 @@ import '../widgets/book_list.dart';
 
 class BooksScreen extends StatefulWidget {
   const BooksScreen({
-    super.key,
+  super.key,
   });
 
   @override
@@ -50,44 +50,44 @@ class _BooksScreenState extends State<BooksScreen>
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Books'),
-          bottom: TabBar(
-            controller: _tabController,
-            tabs: const [
-              Tab(
-                text: 'Popular',
-                icon: Icon(Icons.people),
-              ),
-              Tab(
-                text: 'New',
-                icon: Icon(Icons.new_releases),
-              ),
-              Tab(
-                text: 'All',
-                icon: Icon(Icons.list),
-              ),
-            ],
+    appBar: AppBar(
+      title: const Text('BusWallet'),
+      bottom: TabBar(
+        controller: _tabController,
+        tabs: const [
+          Tab(
+            text: 'Pagar',
+            icon: Icon(Icons.money),
           ),
+          Tab(
+            text: 'Movimientos',
+            icon: Icon(Icons.zoom_in),
+          ),
+          Tab(
+            text: 'Recargas',
+            icon: Icon(Icons.wifi_tethering_outlined),
+          ),
+        ],
+      ),
+    ),
+    body: TabBarView(
+      controller: _tabController,
+      children: [
+        BookList(
+          books: libraryInstance.popularBooks,
+          onTap: _handleBookTapped,
         ),
-        body: TabBarView(
-          controller: _tabController,
-          children: [
-            BookList(
-              books: libraryInstance.popularBooks,
-              onTap: _handleBookTapped,
-            ),
-            BookList(
-              books: libraryInstance.newBooks,
-              onTap: _handleBookTapped,
-            ),
-            BookList(
-              books: libraryInstance.allBooks,
-              onTap: _handleBookTapped,
-            ),
-          ],
+        BookList(
+          books: libraryInstance.newBooks,
+          onTap: _handleBookTapped,
         ),
-      );
+        BookList(
+          books: libraryInstance.allBooks,
+          onTap: _handleBookTapped,
+        ),
+      ],
+    ),
+  );
 
   RouteState get _routeState => RouteStateScope.of(context);
 
@@ -98,7 +98,7 @@ class _BooksScreenState extends State<BooksScreen>
   void _handleTabIndexChanged() {
     switch (_tabController.index) {
       case 1:
-        _routeState.go('/books/new');
+        _routeState.go('/authors');
         break;
       case 2:
         _routeState.go('/books/all');

@@ -27,7 +27,7 @@ class AuthorsScreen extends StatelessWidget {
       },),
       appBar:
       AppBar(
-        title: Text("Listado"),
+        title: Text("Movimientos"),
       ),
       body: Container(
         child: _MyList(),),
